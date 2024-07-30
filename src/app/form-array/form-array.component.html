@@ -1,0 +1,36 @@
+<div class="container mt-2">
+    
+    <form [formGroup]="myform" (ngSubmit)="onSubmit()">
+        <span><strong>Form Array</strong></span>
+        <div formArrayName="users">
+            <div *ngFor="let user of users.controls;let i = index" [formGroupName]="i">
+                <div class="card mt-3">
+                    
+                    <div class="card-content">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" formControlName="email" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" formControlName="password" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="cpassword">Confirm Password</label>
+                            <input type="password" id="cpassword" formControlName="cpassword" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Mobile</label>
+                            <input type="text" id="mobile" formControlName="mobile" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn btn-primary" type="submit">Submit</div>
+    </form>
+    <button type="button" class="btn btn-success" (click)="addUser()">Add User</button>
+</div>
+
+{{this.myform.value | json}}

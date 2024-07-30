@@ -1,0 +1,61 @@
+<div *ngIf="!isShow">
+    <div class="row mt-4 justify-content-center">
+        <div class="col-md-3">
+            <a routerLink="shared_data_in_sibling">
+                <span><strong (click)="isShow = true">Share Data in Sibling Component</strong></span>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a routerLink="parent_to_child">
+                <span><strong (click)="isShow = true">Send data parent to child</strong></span>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a routerLink="child_to_parent">
+                <span><strong (click)="isShow = true">Send data child to parent</strong></span>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a routerLink="form_array">
+                <span><strong (click)="isShow = true">Create Multiple User (Form Array)</strong></span>
+            </a>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-3">
+            <a routerLink="simple_reactive_form">
+                <span><strong (click)="isShow = true">simple Reactive Form</strong></span>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a routerLink="highlight_directive">
+                <span><strong (click)="isShow = true">Directive</strong></span>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a routerLink="array_logic">
+                <span><strong (click)="isShow = true">Array Logic</strong></span>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a routerLink="template_form">
+                <span><strong (click)="isShow = true">Simple Template Form</strong></span>
+            </a>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-3">
+            <a routerLink="on_destroy">
+                <span><strong (click)="isShow = true">On Destroy</strong></span>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a routerLink="dashboard">
+                <span><strong (click)="isShow = true">DashBoard</strong></span>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<router-outlet *ngIf="isShow"></router-outlet>

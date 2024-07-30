@@ -1,0 +1,16 @@
+<div class="container">
+    <a href="#"><button type="button" class="btn btn-primary">Back</button></a>
+    <div class="card mt-3">
+        <div class="card-header">This is parent component</div>
+    </div>
+    <div class="card-content">
+        <input type="text" placeholder="Enter any number" #myInput />
+        <button type="button" class="btn btn-primary" (click)="change(myInput.value)">Change</button>
+
+        <h3>This is the Child component</h3>
+        <hr>
+        <app-child [data]="this.count"></app-child>
+    </div>
+
+    
+</div>

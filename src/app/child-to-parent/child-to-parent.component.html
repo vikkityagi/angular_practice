@@ -1,0 +1,11 @@
+<div class="container mt-2">
+    <a href="#"><button type="button" class="btn btn-primary">Back</button></a>
+    <div class="card">
+        <div class="card-header">This is parent Component</div>
+        <div class="card-content">
+            <app-child (subtract)="handleSubtract($event)"></app-child>
+            <hr>
+            <h3>This data comes from child: {{show}}</h3>
+        </div>
+    </div>
+</div>
