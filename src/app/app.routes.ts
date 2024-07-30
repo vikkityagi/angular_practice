@@ -9,6 +9,7 @@ import { ArrayLogicComponent } from './array-logic/array-logic.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { OnDestroyComponent } from './on-destroy/on-destroy.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DeferComponent } from './defer/defer.component';
 
 export const routes: Routes = [
 
@@ -21,5 +22,6 @@ export const routes: Routes = [
     {path:'array_logic',component: ArrayLogicComponent},
     {path: 'template_form',component:TemplateDrivenFormComponent},
     {path:'on_destroy',component: OnDestroyComponent},
-    {path:'dashboard',component: DashboardComponent}
+    {path:'dashboard',component: DashboardComponent},
+    {path:'defer',component:DeferComponent}
 ];
