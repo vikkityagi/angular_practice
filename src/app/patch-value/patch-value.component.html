@@ -1,0 +1,45 @@
+<div class="container">
+    <button type="button" class="btn btn-primary" (click)="back()">Back</button>
+    <div class="card mt-3">
+        <div class="card-header text-center"><strong>Patch Data Form Example</strong></div>
+    </div>
+    <div class="card-body mt-2">
+        <button type="button" class="btn btn-primary" (click)="patchValue()">Patch Value</button>
+        <form [formGroup]="patchform">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" formControlName="name" id="name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="mobile_no">Mobile No</label>
+                <input type="text" formControlName="mobile_no" id="mobile_no" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea rows="4" cols="50" formControlName="address" id="address" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="radio" formControlName="gender" value="Male">
+                <label class="form-check-label" for="male">Male</label>&nbsp;&nbsp;
+                <input type="radio" formControlName="gender" value="Female">
+                <label class="form-check-label" for="female">Female</label>
+            </div>
+            <div class="form-group">
+                <div class="label">Select City</div>
+                <select class="form-control mt-1" formControlName="city">
+                    <option value="1">Delhi</option>
+                    <option value="2">Mumbai</option>
+                    <option value="3">Ghazibad</option>
+                    <option value="4">Noida</option>
+                </select>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" [disabled]="this.patchform.invalid">Submit</button>
+        </form>
+        {{this.patchform.value | json}}
+    </div>
+
+    <p>In Angular's reactive forms, both setValue and patchValue methods are used to update the values of form controls. However, there are key differences between these two methods in how they handle form values and their applicability:</p>
+
+
+</div>

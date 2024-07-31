@@ -59,8 +59,26 @@
                 <span><strong (click)="isShow = true">Defer</strong></span>
             </a>
         </div>
+        <div class="col-md-3">
+            <a routerLink="patch_value">
+                <span><strong (click)="isShow = true">Patch Value</strong></span>
+            </a>
+        </div>
 
     </div>
+    <div class="div1"></div>
+<div class="div2" #div2>this is div2</div>
+<div class="div3"></div>
+<div class="div4"></div>
+@defer(on hover(div2)){
+    <div class="div5"></div>
+}@placeholder(){
+    <p>There is some content</p>
+}
+
 </div>
 
 <router-outlet *ngIf="isShow"></router-outlet>
+
+
+

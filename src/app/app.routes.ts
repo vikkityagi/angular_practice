@@ -10,6 +10,7 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
 import { OnDestroyComponent } from './on-destroy/on-destroy.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DeferComponent } from './defer/defer.component';
+import { PatchValueComponent } from './patch-value/patch-value.component';
 
 export const routes: Routes = [
 
@@ -23,5 +24,6 @@ export const routes: Routes = [
     {path: 'template_form',component:TemplateDrivenFormComponent},
     {path:'on_destroy',component: OnDestroyComponent},
     {path:'dashboard',component: DashboardComponent},
-    {path:'defer',component:DeferComponent}
+    {path:'defer',component:DeferComponent},
+    {path: 'patch_value',component: PatchValueComponent}
 ];
