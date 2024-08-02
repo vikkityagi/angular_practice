@@ -11,6 +11,8 @@ import { OnDestroyComponent } from './on-destroy/on-destroy.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DeferComponent } from './defer/defer.component';
 import { PatchValueComponent } from './patch-value/patch-value.component';
+import { TestComponent } from './test/test.component';
+import { InterviewTestComponent } from './interview-test/interview-test.component';
 
 export const routes: Routes = [
 
@@ -25,5 +27,7 @@ export const routes: Routes = [
     {path:'on_destroy',component: OnDestroyComponent},
     {path:'dashboard',component: DashboardComponent},
     {path:'defer',component:DeferComponent},
-    {path: 'patch_value',component: PatchValueComponent}
+    {path: 'patch_value',component: PatchValueComponent},
+    {path:'test',component: TestComponent},
+    {path:'interview',component: InterviewTestComponent}
 ];

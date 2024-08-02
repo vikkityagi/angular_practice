@@ -1,61 +1,61 @@
 {
-  "hash": "4ea48187",
+  "hash": "95bcda75",
   "configHash": "3a49b6f0",
-  "lockfileHash": "fbd7e59b",
-  "browserHash": "5755299e",
+  "lockfileHash": "e3b0c442",
+  "browserHash": "733de5df",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "59de5a9b",
+      "fileHash": "8780691e",
       "needsInterop": false
     },
     "@angular/common/http": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
       "file": "@angular_common_http.js",
-      "fileHash": "7e574ebd",
+      "fileHash": "1ac6f546",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "641fd09c",
+      "fileHash": "636a6730",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "0e5b6e63",
+      "fileHash": "a06ba489",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "9a9a40d4",
+      "fileHash": "a0b08c1e",
       "needsInterop": false
     },
     "@angular/platform-server": {
       "src": "../../../../../node_modules/@angular/platform-server/fesm2022/platform-server.mjs",
       "file": "@angular_platform-server.js",
-      "fileHash": "29542b22",
+      "fileHash": "9580df8c",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "4dbfd89d",
+      "fileHash": "a1d92117",
       "needsInterop": false
     },
     "angular-highcharts": {
       "src": "../../../../../node_modules/angular-highcharts/fesm2022/angular-highcharts.mjs",
       "file": "angular-highcharts.js",
-      "fileHash": "91a53cfc",
+      "fileHash": "abcfbe74",
       "needsInterop": false
     },
     "rxjs": {
       "src": "../../../../../node_modules/rxjs/dist/cjs/index.js",
       "file": "rxjs.js",
-      "fileHash": "9ee277f7",
+      "fileHash": "cd21cce3",
       "needsInterop": true
     }
   },
