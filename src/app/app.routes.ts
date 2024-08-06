@@ -15,6 +15,7 @@ import { TestComponent } from './test/test.component';
 import { InterviewTestComponent } from './interview-test/interview-test.component';
 import { ViewChildComponent } from './view-child/view-child.component';
 import { NgxsComponent } from './ngxs/ngxs.component';
+import { ChangeDetectionComponent } from './change-detection/change-detection.component';
 
 export const routes: Routes = [
 
@@ -34,4 +35,5 @@ export const routes: Routes = [
     {path:'interview',component: InterviewTestComponent},
     {path:'view_child',component:ViewChildComponent},
     {path:'ngxs',component:NgxsComponent},
+    {path:'change_detect',component:ChangeDetectionComponent}
 ];
