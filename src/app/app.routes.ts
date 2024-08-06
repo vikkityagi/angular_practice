@@ -14,6 +14,7 @@ import { PatchValueComponent } from './patch-value/patch-value.component';
 import { TestComponent } from './test/test.component';
 import { InterviewTestComponent } from './interview-test/interview-test.component';
 import { ViewChildComponent } from './view-child/view-child.component';
+import { NgxsComponent } from './ngxs/ngxs.component';
 
 export const routes: Routes = [
 
@@ -31,5 +32,6 @@ export const routes: Routes = [
     {path: 'patch_value',component: PatchValueComponent},
     {path:'test',component: TestComponent},
     {path:'interview',component: InterviewTestComponent},
-    {path:'view_child',component:ViewChildComponent}
+    {path:'view_child',component:ViewChildComponent},
+    {path:'ngxs',component:NgxsComponent},
 ];
