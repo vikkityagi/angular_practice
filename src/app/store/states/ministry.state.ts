@@ -6,9 +6,6 @@ import { of } from 'rxjs';
 import { MinistryStateModel } from '../model/ministry.model';
 import { LoadMinistryData } from '../action/ministry.action';
 
-
-
-
 @State<MinistryStateModel>({
   name: 'ministry',
   defaults: {
@@ -19,25 +16,32 @@ import { LoadMinistryData } from '../action/ministry.action';
 export class MinistryState {
   constructor(private http: HttpClient) {}
 
-  // @Selector()
-  // static getMinistryData(state: MinistryStateModel) {
-  //   return state ? state.ministryData : [];
-  // }
+  @Selector()
+  static getMinistryData(state: MinistryStateModel) {
+    return state.ministryData;
+  }
 
   @Action(LoadMinistryData)
   loadMinistryData(ctx: StateContext<MinistryStateModel>) {
     const state = ctx.getState();
-    
-       this.http.get('http://localhost:3002/api/v1/ministry').pipe(
+
+    if (Object.keys(state.ministryData).length === 0) { // Check if ministryData is empty
+      return this.http.get('http://localhost:3002/api/v1/ministry').pipe(
         tap((result: any) => {
           console.log('API result:', result); // Log the API result
-          const ministryResources = result?._embedded?.ministryResources || [];
+          const ministryResources = result?._embedded?.ministryResources;
           console.log('Processed ministry resources:', ministryResources); // Log processed data
-          ctx.setState({
-            ministryData: ministryResources
+          ctx.patchState({
+            ministryData: ministryResources || {}
           });
         }),
+        catchError((error) => {
+          console.error('Error loading ministry data:', error);
+          return of(error); // Handle error appropriately
+        })
       );
-    
+    } else {
+      return of(state.ministryData); // Return existing state data as observable
+    }
   }
 }

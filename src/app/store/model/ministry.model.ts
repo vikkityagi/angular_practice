@@ -1,3 +1,3 @@
 export class MinistryStateModel {
-    public ministryData!: any;
+    public ministryData: any = {};
   }
