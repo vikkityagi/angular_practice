@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { tap, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { MinistryStateModel } from '../model/ministry.model';
-import { LoadMinistryData } from '../action/ministry.action';
+import { LoadMinistryData, RemoveMinistryData } from '../action/ministry.action';
 
 @State<MinistryStateModel>({
   name: 'ministry',
@@ -19,6 +19,11 @@ export class MinistryState {
   @Selector()
   static getMinistryData(state: MinistryStateModel) {
     return state.ministryData;
+  }
+
+  @Selector()
+  static deleteMinistryData(state: MinistryStateModel) {
+    return state.ministryData.defaults.ministryData;
   }
 
   @Action(LoadMinistryData)
@@ -44,4 +49,13 @@ export class MinistryState {
       return of(state.ministryData); // Return existing state data as observable
     }
   }
+
+  //remove the post action
+  @Action(RemoveMinistryData) 
+  removeMinistryData(ctx: StateContext<MinistryStateModel>){
+    const state = ctx.getState();
+    ctx.patchState({
+        ministryData: {}
+    })
+}
 }

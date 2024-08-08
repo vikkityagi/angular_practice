@@ -22,19 +22,18 @@ import { MyService } from '../interface/MyService.interface';
 export class TestComponent {
   data!: any;
 
-  constructor(private testService: MyService) {
+  constructor(private myService: MyService) {
     this.getData();
   }
 
   public saveData(id: number, name: string) {
-    this.testService.saveDetails(id, name);
+    this.myService.saveDetails(id, name);
     this.getData();
   }
 
   public getData() {
-    this.data = this.testService.getDetails();
+    this.data = this.myService.getDetails();
     console.log(this.data.id);
     console.log(this.data.name);
-    debugger
   }
 }

@@ -1,7 +1,7 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { Select, Store  } from '@ngxs/store';
 import { CommonModule } from '@angular/common';
-import { LoadMinistryData } from '../store/action/ministry.action';
+import { LoadMinistryData, RemoveMinistryData } from '../store/action/ministry.action';
 import { Observable } from 'rxjs';
 import { MinistryState } from '../store/states/ministry.state';
 
@@ -19,7 +19,7 @@ export class NgxsComponent implements OnInit {
 
   @Select(MinistryState.getMinistryData) ministryData$!: Observable<any>;
 
-  constructor() {}
+  constructor(private cdRef: ChangeDetectorRef) {}
 
   ngOnInit() {
     console.log('Initializing component and dispatching LoadMinistryData action');
@@ -32,5 +32,11 @@ export class NgxsComponent implements OnInit {
     this.ministryData$.subscribe(data => {
       console.log('Ministry Data from Store:', data);
     });
+  }
+
+  removeData(){
+    this.store.dispatch(new RemoveMinistryData());
+    // this.ministryData$ = {}
+    this.cdRef.detectChanges();
   }
 }

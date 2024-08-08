@@ -9,7 +9,7 @@ import { debounceTime, distinctUntilChanged, fromEvent, map } from 'rxjs';
   templateUrl: './comp1.component.html',
   styleUrl: './comp1.component.css'
 })
-export class Comp1Component implements AfterViewInit {
+export class Comp1Component   {
 
   @ViewChild('myInput') myInput: any = ElementRef;
   reqData: any;
@@ -25,20 +25,9 @@ export class Comp1Component implements AfterViewInit {
     this.sahredService.exclusive.next(value);
   }
 
-  ngAfterViewInit(): void {
-    const searchTerm = fromEvent(this.myInput.nativeElement, 'keyup').pipe(
-      map(
-        (event: any) => event?.target.value),
-      debounceTime(500),
-      distinctUntilChanged()
-    );
-
-    searchTerm.subscribe((event: any) => {
-      this.reqData = this.myInput.nativeElement.value;
-      console.log(this.reqData)
-    });
+  
 
 
-  }
+  
 
 }

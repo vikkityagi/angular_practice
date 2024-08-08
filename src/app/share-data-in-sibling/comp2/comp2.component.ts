@@ -18,9 +18,7 @@ export class Comp2Component implements OnInit {
   ngOnInit(): void {
     
     this.sharedService.exclusive.subscribe({
-      
       next: data=>{
-        alert("ng call")
         this.currentValue = data;
       },
       error: error=>{
