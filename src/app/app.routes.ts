@@ -17,6 +17,7 @@ import { ViewChildComponent } from './view-child/view-child.component';
 import { NgxsComponent } from './ngxs/ngxs.component';
 import { ChangeDetectionComponent } from './change-detection/change-detection.component';
 import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
+import { NestedReactiveFormComponent } from './nested-reactive-form/nested-reactive-form.component';
 
 export const routes: Routes = [
 
@@ -37,5 +38,6 @@ export const routes: Routes = [
     {path:'view_child',component:ViewChildComponent},
     {path:'ngxs',component:NgxsComponent},
     {path:'change_detect',component:ChangeDetectionComponent},
-    {path: 'async_pipe',component: AsyncPipeComponent}
+    {path: 'async_pipe',component: AsyncPipeComponent},
+    {path: 'nested_reactive_form',component: NestedReactiveFormComponent}
 ];

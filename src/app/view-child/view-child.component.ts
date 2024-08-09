@@ -8,7 +8,7 @@ import { ViewChildChildComponent } from './view-child-child/view-child-child.com
   templateUrl: './view-child.component.html',
   styleUrl: './view-child.component.css'
 })
-export class ViewChildComponent implements AfterViewInit {
+export class ViewChildComponent   {
 
   @ViewChild('myinput1') myinputvw1! : ElementRef;
 
@@ -25,7 +25,7 @@ export class ViewChildComponent implements AfterViewInit {
   }
 
     // question 3
-  ngAfterViewInit() {
+    fetch() {
     console.log(this.childComponent.title+' in parent');
   }
 

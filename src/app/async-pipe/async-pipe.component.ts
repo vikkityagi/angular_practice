@@ -1,60 +1,30 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { AsyncPipeChildComponent } from './async-pipe-child/async-pipe-child.component';
+import { AsyncPipeChild2Component } from './async-pipe-child2/async-pipe-child2.component';
 
 @Component({
   selector: 'app-async-pipe',
   standalone: true,
-  imports: [CommonModule],
+  imports: [AsyncPipeChild2Component],
   templateUrl: './async-pipe.component.html',
   styleUrls: ['./async-pipe.component.css']
 })
-export class AsyncPipeComponent implements OnInit {
+export class AsyncPipeComponent   {
 
-  myobservable = new Observable(observer => {
-    observer.next(1);
-    observer.next(2);
-    observer.next(3);
-    observer.next(4);
-    observer.next(5);
-    observer.next(6);
-    observer.next(1);
-    observer.next(2);
-    observer.next(3);
-    observer.next(4);
-    observer.next(5);
-    observer.next(6);
-    observer.complete();
-  });
+  title: string = "parent data";
 
-  mysubject = new Subject<number>();
 
-  ngOnInit(): void {
-    // Subscribe to mysubject here to ensure you receive emitted values
-    // this.mysubject.subscribe({
-    //   next: data => {
-    //     console.log('Subscriber 1 received:', data);
-    //   }
-    // });
+  @ViewChild(AsyncPipeChildComponent) asyncpipecomponent!: AsyncPipeChildComponent;
+
+  fetch(): void {
+    // console.log(this.asyncpipecomponent.title)
+      this.asyncpipecomponent.mysubject.subscribe({
+        next: data=>{
+          console.log("AsyncPipeComponent"+ data)
+        }
+      })
   }
-
-  setData() {
-    this.mysubject.next(1);
-    this.mysubject.next(2);
-    this.mysubject.next(3);
-  }
-
-  inform() {
-    console.log("Call inform method");
-
-    // Subscribe again to show how multiple subscribers can receive the data
-    this.mysubject.subscribe({
-      next: data => {
-        console.log('Subscriber 2 received:', data);
-      }
-    });
-
-    // Call setData to emit some values
-    this.setData();
-  }
+ 
 }

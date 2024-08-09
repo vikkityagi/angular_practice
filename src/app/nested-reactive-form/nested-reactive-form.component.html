@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row mt-2">
+        <div class="card-header text-center"><span>Nested Reactive Form:</span></div>
+        <div class="card-body">
+            <form [formGroup]="myform">
+                <div formGroupName="personalinfo">
+                    <div class="form-group">
+                        <label form="name">Name</label>
+                        <input type="text" formControlName="name" id="name" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label form="mobile">Mobile</label>
+                        <input type="text" formControlName="mobile" id="mobile" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label form="name">Name</label>
+                        <input type="text" formControlName="name" id="name" class="form-control" />
+                    </div>
+
+                    <div formArrayName="addresses">
+                        <div *ngFor="let address of addresses.controls,let i = index" [formGroupName]="i">
+                            <div class="form-group">
+                                <label form="state">State</label>
+                                <input type="text" formControlName="state" id="state" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label form="zip">Zip</label>
+                                <input type="text" formControlName="zip" id="zip" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label form="city">City</label>
+                                <input type="text" formControlName="city" id="city" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

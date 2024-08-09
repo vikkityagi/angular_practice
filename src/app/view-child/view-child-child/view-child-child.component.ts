@@ -9,6 +9,6 @@ import { Component } from '@angular/core';
 })
 export class ViewChildChildComponent {
 
-  title : string = "This is child data";
+  title : string = "child data";
 
 }
