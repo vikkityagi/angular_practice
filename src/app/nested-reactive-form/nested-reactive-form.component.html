@@ -5,33 +5,36 @@
             <form [formGroup]="myform">
                 <div formGroupName="personalinfo">
                     <div class="form-group">
-                        <label form="name">Name</label>
+                        <label for="name">Name</label>
                         <input type="text" formControlName="name" id="name" class="form-control" />
                     </div>
                     <div class="form-group">
-                        <label form="mobile">Mobile</label>
+                        <label for="mobile">Mobile</label>
                         <input type="text" formControlName="mobile" id="mobile" class="form-control" />
                     </div>
                     <div class="form-group">
-                        <label form="name">Name</label>
-                        <input type="text" formControlName="name" id="name" class="form-control" />
+                        <label for="pincode">PinCode</label>
+                        <input type="text" formControlName="pincode" id="pincode" class="form-control" />
                     </div>
 
                     <div formArrayName="addresses">
-                        <div *ngFor="let address of addresses.controls,let i = index" [formGroupName]="i">
+                        <div *ngFor="let address of addresses.controls;let i = index" [formGroupName]="i">
                             <div class="form-group">
-                                <label form="state">State</label>
+                                <label for="state">State</label>
                                 <input type="text" formControlName="state" id="state" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <label form="zip">Zip</label>
+                                <label for="zip">Zip</label>
                                 <input type="text" formControlName="zip" id="zip" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <label form="city">City</label>
+                                <label for="city">City</label>
                                 <input type="text" formControlName="city" id="city" class="form-control" />
                             </div>
+
+                            <button type="button" class="btn btn-success" (click)="removeAddress(i)">Remove Address</button>
                         </div>
+                        <button type="button" class="btn btn-success" (click)="addAddress()">Add Address</button>
                     </div>
                 </div>
             </form>
