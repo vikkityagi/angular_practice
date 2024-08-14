@@ -1,15 +1,13 @@
 /* Ensure the row container is a flex container */
 .row {
-    display: flex;
-    flex-wrap: nowrap; 
     justify-content: center; 
   }
   
   
-  .col-md-3 {
+  div {
     flex: 1 1 25%; 
-    max-width: 25%; 
-    box-sizing: border-box; 
+    max-width: 100% !important; 
+    /* box-sizing: border-box;  */
     padding: 28px; 
     border: 1px solid red;
     margin: 2px;

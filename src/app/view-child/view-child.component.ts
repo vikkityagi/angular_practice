@@ -24,8 +24,8 @@ export class ViewChildComponent   {
     console.log(value);
   }
 
-    // question 3
-    fetch() {
+  // question 3
+  fetch() {
     console.log(this.childComponent.title+' in parent');
   }
 

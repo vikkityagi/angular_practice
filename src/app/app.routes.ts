@@ -19,6 +19,9 @@ import { ChangeDetectionComponent } from './change-detection/change-detection.co
 import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
 import { NestedReactiveFormComponent } from './nested-reactive-form/nested-reactive-form.component';
 import { ViewEncapsulationComponent } from './view-encapsulation/view-encapsulation.component';
+import { MergeMapComponent } from './merge-map/merge-map.component';
+import { TapComponent } from './tap/tap.component';
+import { ExhaustMapComponent } from './exhaust-map/exhaust-map.component';
 
 export const routes: Routes = [
 
@@ -41,5 +44,8 @@ export const routes: Routes = [
     {path:'change_detect',component:ChangeDetectionComponent},
     {path: 'async_pipe',component: AsyncPipeComponent},
     {path: 'nested_reactive_form',component: NestedReactiveFormComponent},
-    {path: 'view_encapsulation',component: ViewEncapsulationComponent}
+    {path: 'view_encapsulation',component: ViewEncapsulationComponent},
+    {path:'merge_map',component: MergeMapComponent},
+    {path:'tap',component: TapComponent},
+    {path: 'exhaust_map',component: ExhaustMapComponent}
 ];
